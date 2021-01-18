@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email:params['user']['email'])
         if user && user.authenticate(params['user']['password'])
             session[:user_id] = user.id 
-            redirect_to_user_path(user)
+            redirect_to user_path(user)
         else 
             flash[:message] = "Email or Password does not match our records. Please try again."
             render :new
@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
     def destroy
         session.delete :user_id
         flash[:message] = "You have Successfully Logged Out."
-        redirect_to root
+        redirect_to :root
     end
 end
