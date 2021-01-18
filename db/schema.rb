@@ -18,21 +18,12 @@ ActiveRecord::Schema.define(version: 2021_01_18_014829) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
-    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "doctors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "specialty"
-    t.integer "hospital_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "hospitals", force: :cascade do |t|
-    t.string "name"
     t.string "city"
     t.string "state"
     t.string "zipcode"
@@ -49,6 +40,4 @@ ActiveRecord::Schema.define(version: 2021_01_18_014829) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "appointments", "doctors"
-  add_foreign_key "appointments", "users"
 end

@@ -9,15 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <div>
-   <a class="navbar-brand" href="<%= root_path %>"/>Home</a>
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <%if logged_in? %>
+      <% end %>
+     
+          
+        <a class="navbar-brand" href="<%= root_path %>"/>Home</a>
         <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
-        <a class="navbar-brand" href="<%= '/login' %>"/>Login</a>
+        <a class="navbar-brand" href="<%= '/login' %>"/>Sign In</a>
         <a class="navbar-brand" <%= link_to "Log Out", logout_path, method: 'delete' %></a>
-  </div>
+        </div>
   </head>
 
   <body>
     <%= yield %>
+     <footer class="branding">
+        <small>&copy; 2020 <strong>Organize</strong></small>
+      </footer><br>
+       <% if logged_in? %>
+          <a href="/logout">Log Out</a>
+          <%end%>
   </body>
 </html>
