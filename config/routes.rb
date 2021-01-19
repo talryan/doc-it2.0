@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
   resources :users
-  resources :hospitals
   resources :appointments
-  resources :patients
-  resources :doctors
+
+  resources :doctors do 
+    resources :appointments 
+  end
+
 
   resources :users
   root 'welcome#home'
