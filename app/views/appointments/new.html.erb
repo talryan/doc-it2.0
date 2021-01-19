@@ -1,6 +1,7 @@
+<h1> Create a New Appointment
 <%= form_for @appointment do |f| %>
     <%= f.label "Date" %>
-    <%= f.datefield_field :date%>
+    <%= f.date_field :date%><br>
     <%= f.label "Time" %>
     <%= f.time_field :time %>
     <%= f.submit %>
