@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_014829) do
     t.string "first_name"
     t.string "last_name"
     t.string "specialty"
+    t.string "address"
     t.string "city"
     t.string "state"
     t.string "zipcode"
