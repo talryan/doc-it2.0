@@ -5,13 +5,13 @@ class AppointmentsController < ApplicationController
     end
 
     def create 
-        appointment = Appointment.create(appointment_params)
-    end
+    #     appointment = Appointment.create(appointment_params)
+    # end
 
 
-    private 
+    # private 
 
-    def appointment_params
-        params.require(:appointment).permit(:time, :)
-    end
+    # def appointment_params
+    #     params.require(:appointment).permit(:time, :date, :doctor.first_name, :doctor.last_name, :user.first_name, :user.last_name )
+    # end
 end
