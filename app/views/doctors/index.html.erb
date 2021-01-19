@@ -4,8 +4,7 @@ insert search here
 <% @doctors.each do |doctor| %>
 <ul>
 <li> <h3><%= doctor.state %></h3>
-<li><%= doctor.first_name %> 
-<%= doctor.last_name %> 
+<%= link_to "#{doctor.name}", doctor_path(doctor)%>
 <li><label> (<%= doctor.specialty%>)</label>
 </ul>
 <br> 

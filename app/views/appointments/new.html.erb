@@ -1,7 +1,7 @@
-<%= form_for @appointments do |f| %>
+<%= form_for @appointment do |f| %>
     <%= f.label "Date" %>
-    <%= f.text_field :datetime%>
+    <%= f.datefield_field :date%>
     <%= f.label "Time" %>
-    <%= f.text_field :datetime %>
+    <%= f.time_field :time %>
     <%= f.submit %>
 <% end %>
