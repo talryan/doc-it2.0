@@ -11,3 +11,5 @@ Doctor.create(name: 'Dasi Lerme', specialty: 'craniofacial' , address: '3201 Can
 Doctor.create(name: 'Kristina Celine', specialty: 'pediatrics' , address: '234 Spruce Street', city: 'Seattle', state: 'Washington', zipcode: '95624')
 Doctor.create(name: 'Carl River', specialty: 'cardiology' , address: '5674 Benson Ave', city: 'Elk Grove', state: 'California', zipcode: '43213')
 Doctor.create(name: 'Andrew Hager', specialty: 'neurology' , address: '7594 Calm Way', city: 'Austin', state: 'Texas', zipcode: '08374')
+
+Doctor.create(name: , address: Faker::Address.unique.street_address, city: )
