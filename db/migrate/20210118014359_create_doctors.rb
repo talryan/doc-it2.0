@@ -4,7 +4,7 @@ class CreateDoctors < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :specialty
       t.string :address 
-
+      t.string :city
       t.string :state
       t.string :zipcode
 
