@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   post '/users/new' => 'users#create'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  get '/auth/:provider/callback' => 'sessions#omniauth'
   delete '/logout' => 'sessions#destroy'
+
+  get '/auth/:provider/callback' => 'sessions#omniauth'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
