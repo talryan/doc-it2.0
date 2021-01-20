@@ -1,9 +1,2 @@
-<h1> Create a New Appointment for <%current_user.first_name%>
-<%= form_for [@appointment, @doctor] do |f| %>
-
-    <%= f.label "Date" %>
-    <%= f.date_field :date%><br>
-    <%= f.label "Time" %>
-    <%= f.time_field :time %>
-    <%= f.submit %>
-<% end %>
+<h1> Create New Appointment </h1> 
+<%= render "form" %>
