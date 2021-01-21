@@ -18,17 +18,13 @@ class AppointmentsController < ApplicationController
 
     def create 
 
-    #     @appointment = Appointment.new(appointment_params)
-    #     @appointment = current_user.appointments.create(appointment_params)
-    #     if @appointment.save
-    #     redirect_to appointment_path(@appointment)
-    #     else 
-    #         render :new 
-    #     end
+    
     @appointment = Appointment.new(appointment_params)
+    @appointment.doctor = Doctor.find_by(params[:doctor_id])
     @appointment.user_id = current_user.id
+        byebug
     if @appointment.save
-        redirect_to appointments_path(current_user.id)
+        redirect_to appointment_path(current_user.id)
     else
         render :new
     end
@@ -38,6 +34,9 @@ class AppointmentsController < ApplicationController
     def edit 
     end
 
+    def show #one 
+        @appointment = Appointment.find(params[:id])
+    end
 
     private 
 

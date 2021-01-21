@@ -15,3 +15,11 @@ Doctor.create(name: Faker::FunnyName.two_word_name,
               zipcode: Faker::Address.zip_code 
             )
 end
+
+def doctor_specialty 
+      Doctor.create([{specialty: "Abdominal Radiology"}, {specialty: "Adult Cardiothoracic Anesthesiology"}, {specialty: "Allergy/Immunology"},
+        {specialty: "Addiction Psychiatry"}]
+                   )
+end
+
+doctor_specialty

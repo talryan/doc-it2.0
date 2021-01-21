@@ -1,0 +1,9 @@
+<h1> Appointment Details: </h1> 
+
+Patient Name: <%=current_user.first_name%> <br>
+Date: <%= @appointment.date %><br>
+Time: <br>
+Doctor:<%=@appointment.doctor.name%> (<%=@appointment.doctor.specialty%>) <br>
+Address: <%=@appointment.doctor.address%><br>
+<%=@appointment.doctor.city%>, <%=@appointment.doctor.state%> <%=@appointment.doctor.zipcode%> 
+
