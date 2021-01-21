@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-10. times do
+50. times do
 Doctor.create(name: Faker::FunnyName.two_word_name, 
               address: Faker::Address.unique.street_address, 
               city: Faker::Address.unique.city, 

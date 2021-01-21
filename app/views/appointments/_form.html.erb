@@ -1,10 +1,16 @@
 
-<label> Patient Name:  <%=current_user.first_name%> <%=current_user.last_name%></label>
+<label> Patient Name:  <%=current_user.first_name%> <%=current_user.last_name%></label> <br>
 
-<%= form_for @appointment do |f| %>
+
+ 
+<%= form_for object do |f| %>
     <%= f.label "Date:" %>
     <%= f.date_field :date%><br>
     <%= f.label "Time:" %>
     <%= f.time_field :time %><br>
+
+   <%= f.fields_for :doctor do |r| %>
+        <h2><%= r.label :name %></h2>
+    <% end %>
     <%= f.submit %>
 <% end %>
