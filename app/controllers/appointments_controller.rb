@@ -9,11 +9,8 @@ class AppointmentsController < ApplicationController
     end
 
     def new
-        if params[:doctor_id] && @doctor = Doctor.find(params[:doctor_id])
-            @appointment = Appointment.new(doctor_id: params[:doctor_id])
-        else
         @appointment = Appointment.new
-        end
+        @doctor = Doctor.find_by(params[:doctor_id])
     end
 
     def create 
@@ -22,9 +19,8 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.doctor = Doctor.find_by(params[:doctor_id])
     @appointment.user_id = current_user.id
-        byebug
     if @appointment.save
-        redirect_to appointment_path(current_user.id)
+        redirect_to appointment_path(@appointment)
     else
         render :new
     end

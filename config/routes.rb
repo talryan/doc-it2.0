@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :appointments
 
   resources :doctors do 
-    resources :appointments, shallow:true 
+    resources :appointments
+    # ,shallow:true 
   end
 
 

@@ -3,7 +3,6 @@ class DoctorsController < ApplicationController
    
 
     def index  #all
-        # @doctors = Doctor.all
 
         if params[:q]
              @doctors = Doctor.search_by_state(params[:q])
