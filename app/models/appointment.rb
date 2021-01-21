@@ -4,5 +4,6 @@ class Appointment < ApplicationRecord
 
   accepts_nested_attributes_for :doctor
 
-  scope :upcomming_appointments, -> {where('date < ?', date.today )}
+  scope :upcomming, -> {where('date > ?', Date.today )}
+
 end
