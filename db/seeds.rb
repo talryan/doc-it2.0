@@ -14,9 +14,12 @@ Doctor.create(name: Faker::FunnyName.two_word_name,
               city: Faker::Address.unique.city, 
               state: Faker::Address.state, 
               zipcode: Faker::Address.zip_code, 
-              [{specialty: "Abdominal Radiology"}, {specialty: "Adult Cardiothoracic Anesthesiology"}, {specialty: "Allergy/Immunology"},
-              {specialty: "Addiction Psychiatry"}]
             )
+end
+
+specialty = ["Abdominal Radiology",  "Adult Cardiothoracic Anesthesiology", "Allergy/Immunology", "Addiction Psychiatry"]
+Doctor.all.each do |doctor|
+  doctor.update(specialty: specialty.sample)
 end
 
 # def doctor_specialty 

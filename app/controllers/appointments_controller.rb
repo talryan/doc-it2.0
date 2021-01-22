@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
     before_action :redirect_if_not_logged_in
-    
+
     def index
         if params[:doctor_id] && @doctor = Doctor.find(params[:doctor_id])
             @appointment = @doctor.appointment
@@ -27,6 +27,7 @@ class AppointmentsController < ApplicationController
     end
 
     def edit 
+        
     end
 
     def show #one 
