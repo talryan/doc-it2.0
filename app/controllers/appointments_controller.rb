@@ -23,6 +23,7 @@ class AppointmentsController < ApplicationController
 
     def create 
         @appointment = Appointment.new(appointment_params)
+        byebug
         if params[:doctor_id]
         @doctor = Doctor.find(params[:doctor_id])
         end
@@ -64,6 +65,7 @@ class AppointmentsController < ApplicationController
     private 
 
     def appointment_params
-        params.require(:appointment).permit(:time, :date,:user_id, :doctor_id, doctor_attributes:[:name, :specialty, :address, :zipcode, :city, :state])
+        params.require(:appointment).permit(:time, :date, :user_id, :doctor_id)
+      
     end
 end
