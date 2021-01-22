@@ -3,34 +3,29 @@ class AppointmentsController < ApplicationController
 
     def index
         if params[:doctor_id] && @doctor = Doctor.find(params[:doctor_id])
-            @appointment = @doctor.appointment
+            @appointments = @doctor.appointments
         else 
             @appointments = Appointment.all
         end
     end
 
-    def new
-        @appointment = Appointment.new
-        @doctor = Doctor.find_by(params[:doctor_id])
-    end
+
 
     def new
         if params[:doctor_id] && @doctor = Doctor.find(params[:doctor_id])
-
-            @appointment= Appointment.new(doctor_id: params[:doctor_id])
+            @appointment = Appointment.new(doctor_id: params[:doctor_id])
      
         else
             @appointment = Appointment.new
-            @appointment.build_doctor
+            # @appointment.build_doctor
         end
     end
 
     def create 
         @appointment = Appointment.new(appointment_params)
-        # @appointment.doctor = Doctor.find(params[:doctor_id])
         if params[:doctor_id]
-        # @appointment.user_id = current_user.id
-        @doctor =
+        @doctor = Doctor.find(params[:doctor_id])
+        end
    
         if @appointment.save
             redirect_to appointment_path(@appointment)

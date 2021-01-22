@@ -12,4 +12,11 @@ class DoctorsController < ApplicationController
     def show #one 
         @doctor = Doctor.find(params[:id])
     end
+
+
+    private
+
+    def doctors_params
+        params.require(:doctor).permit(:name, :specialty, :address, :zipcode, :city, :state, appointment_attributes: [:time, :date,:user_id, :doctor_id])
+    end
 end
