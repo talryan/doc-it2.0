@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
   resources :users
-  resources :appointments
+ 
 
   resources :doctors do 
-    resources :appointments, only [:new, :index, :create, :show, :destroy]
+  resources :appointments, shallow: true #[:new, :index, :create, :show, :destroy]
   end
-
+  resources :appointments
 
   resources :users
   root 'welcome#home'

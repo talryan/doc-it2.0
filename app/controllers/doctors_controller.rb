@@ -5,7 +5,7 @@ class DoctorsController < ApplicationController
         if params[:q]
              @doctors = Doctor.search_by_state(params[:q])
         else 
-            @doctors = Doctor.all
+            @doctors = Doctor.all.alphabetical_order
         end
     end 
 

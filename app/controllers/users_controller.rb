@@ -15,8 +15,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id]) 
-        @appointment = Appointment.find(:id)
+        # @user = User.find(params[:id]) 
+        # @appointment = Appointment.find(:id)
     end
 
     private 

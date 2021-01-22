@@ -1,5 +1,6 @@
 <h1> Create New Appointment </h1> 
 
- <h4>Patient Name:  <%=current_user.first_name%> <%=current_user.last_name%></h4> <br>
- <h4> Doctor Name: <%=@doctor.name%> </h4>
+ <strong>Patient Name:  <%=current_user.first_name%> <%=current_user.last_name%></strong> <br>
+// <strong>Doctor Name: <%=@doctor.appointment.name%> </strong>
  <%= render "form"%>
+ 
