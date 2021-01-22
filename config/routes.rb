@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   resources :doctors do 
     resources :appointments
-    # ,shallow:true 
   end
 
 
