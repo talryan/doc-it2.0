@@ -7,19 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 50. times do
 Doctor.create(name: Faker::FunnyName.two_word_name, 
               address: Faker::Address.unique.street_address, 
               city: Faker::Address.unique.city, 
               state: Faker::Address.state, 
-              zipcode: Faker::Address.zip_code 
+              zipcode: Faker::Address.zip_code, 
+              [{specialty: "Abdominal Radiology"}, {specialty: "Adult Cardiothoracic Anesthesiology"}, {specialty: "Allergy/Immunology"},
+              {specialty: "Addiction Psychiatry"}]
             )
 end
 
-def doctor_specialty 
-      Doctor.create([{specialty: "Abdominal Radiology"}, {specialty: "Adult Cardiothoracic Anesthesiology"}, {specialty: "Allergy/Immunology"},
-        {specialty: "Addiction Psychiatry"}]
-                   )
-end
+# def doctor_specialty 
+#       Doctor.create([{specialty: "Abdominal Radiology"}, {specialty: "Adult Cardiothoracic Anesthesiology"}, {specialty: "Allergy/Immunology"},
+#         {specialty: "Addiction Psychiatry"}]
+#                    )
+# end
 
-doctor_specialty
+# doctor_specialty
