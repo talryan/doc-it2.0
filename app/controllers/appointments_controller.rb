@@ -27,7 +27,16 @@ class AppointmentsController < ApplicationController
     end
 
     def edit 
-        
+        @appointment = Apppointment.find(params[:id])
+
+        def update
+            @appointment = Appointment.find(params[:id])
+            @appointment.update(appointment_params)
+            if @appointment.valid?
+                redirect_to appointment_path
+            else
+                render :edit
+        end
     end
 
     def show #one 
