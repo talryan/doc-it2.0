@@ -1,10 +1,10 @@
 <h1> Appointment Details: </h1> 
 
-<h4>Patient Name:</h4><%=current_user.first_name%> 
-<h4>Date: </h4><%= @appointment.date.strftime("%B %e, %Y")%>
-<h4>Time: </h4><%= @appointment.time.strftime("%I:%M%p")%> 
-<h4>Doctor:</h4><%=@appointment.doctor.name%> (<%=@appointment.doctor.specialty%>)
-<h4>Address:</h4> <%=@appointment.doctor.address%>
+<strong>Patient Name:</strong><%=current_user.first_name%> 
+<strong>Date: </strong><%= @appointment.date.strftime("%B %e, %Y")%>
+<strong>Time: </strong><%= @appointment.time.strftime("%I:%M%p")%> 
+<strong>Doctor:</strong><%=@appointment.doctor.name%> (<%=@appointment.doctor.specialty%>)
+<strong>Address:</strong> <%=@appointment.doctor.address%>
 <br>
 <%=@appointment.doctor.city%>, <%=@appointment.doctor.state%> <%=@appointment.doctor.zipcode%> 
 

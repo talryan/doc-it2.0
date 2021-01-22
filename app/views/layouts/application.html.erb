@@ -10,14 +10,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <% if !logged_in? %>
+    <% if logged_in? %>
+      <a class="navbar-brand" href="<%= root_path %>"/>Home</a>
+      <a class="navbar-brand" href="<%= doctors_path %>"/>View Doctors</a>
+      <a class="navbar-brand" <%= link_to "Log Out", logout_path, method: 'delete' %></a>
+       <% else%>
       <a class="navbar-brand" href="<%= '/login' %>"/>Sign In</a>
-       <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
-       <%end%>
-      <%if logged_in? %>
-        <a class="navbar-brand" href="<%= root_path %>"/>Home</a>
-        <a class="navbar-brand" href="<%= doctors_path %>"/>View Doctors</a>
-        <a class="navbar-brand" <%= link_to "Log Out", logout_path, method: 'delete' %></a>
+      <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
         <%end%>
         </div>
   </head>
