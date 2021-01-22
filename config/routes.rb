@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :appointments
 
   resources :doctors do 
-    resources :appointments
+    resources :appointments, only [:new, :index, :create, :show, :destroy]
   end
 
 
