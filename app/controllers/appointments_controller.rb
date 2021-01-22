@@ -22,15 +22,11 @@ class AppointmentsController < ApplicationController
 
     def create 
         @appointment = Appointment.new(appointment_params)
-        # if params[:doctor_id]
-        # @doctor = Doctor.find(params[:doctor_id])
-        # end
         @appointment.user_id = current_user.id
         if @appointment.save
           
             redirect_to appointment_path(@appointment)
         else
-        
             render :new
         end
 
@@ -51,21 +47,18 @@ class AppointmentsController < ApplicationController
     end
 
     def show #one 
-        
         @appointment = Appointment.find(params[:id])
-     
     end
 
     def destroy
         @appointment = Appointment.find(params[:id])
         @appointment.destroy
-        redirect_to appointment_path
+        redirect_to appointments_path
     end
 
     private 
 
     def appointment_params
         params.require(:appointment).permit(:time, :date, :user_id, :doctor_id)
-        # doctor_attributes:[:name, :specialty, :address, :zipcode, :city, :state])
     end
 end
