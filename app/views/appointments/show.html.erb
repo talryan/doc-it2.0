@@ -10,5 +10,5 @@
 <br>
 <%= link_to "Edit or Reschedule Appointment", edit_appointment_path %>
 <br>
-<%= link_to "Cancel Appointment", appointment_path, method "destroy"%>
+<%= link_to "Cancel Appointment", doctor_appointment_path(@appointment.doctor), method: "destroy"%>
 
