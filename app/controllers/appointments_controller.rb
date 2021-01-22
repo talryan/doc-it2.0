@@ -17,20 +17,20 @@ class AppointmentsController < ApplicationController
      
         else
             @appointment = Appointment.new
-            # @appointment.build_doctor
         end
     end
 
     def create 
         @appointment = Appointment.new(appointment_params)
-        byebug
-        if params[:doctor_id]
-        @doctor = Doctor.find(params[:doctor_id])
-        end
-   
+        # if params[:doctor_id]
+        # @doctor = Doctor.find(params[:doctor_id])
+        # end
+        @appointment.user_id = current_user.id
         if @appointment.save
+          
             redirect_to appointment_path(@appointment)
         else
+        
             render :new
         end
 
@@ -66,6 +66,6 @@ class AppointmentsController < ApplicationController
 
     def appointment_params
         params.require(:appointment).permit(:time, :date, :user_id, :doctor_id)
-      
+        # doctor_attributes:[:name, :specialty, :address, :zipcode, :city, :state])
     end
 end

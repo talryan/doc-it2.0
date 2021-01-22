@@ -5,8 +5,7 @@
     <%= f.date_field :date, min: Date.today%><br>
     <%= f.label "Time:" %>
     <%= f.time_field :time %><br>
-    <%= f.fields_for :doctor do |d|%>
-    <%= d.hidden_field :id %>
-    <%end%>
+    <%= f.hidden_field :doctor_id %>
+ 
     <%= f.submit %>
 <% end %>

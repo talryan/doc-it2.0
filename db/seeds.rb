@@ -43,10 +43,3 @@ Doctor.all.each do |doctor|
   doctor.update(specialty: specialty.sample)
 end
 
-# def doctor_specialty 
-#       Doctor.create([{specialty: "Abdominal Radiology"}, {specialty: "Adult Cardiothoracic Anesthesiology"}, {specialty: "Allergy/Immunology"},
-#         {specialty: "Addiction Psychiatry"}]
-#                    )
-# end
-
-# doctor_specialty
