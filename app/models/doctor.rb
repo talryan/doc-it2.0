@@ -11,6 +11,6 @@ class Doctor < ApplicationRecord
 
     scope :search_by_specialty, -> (query) {where('specialty LIKE ?', "%#{query}%" )}
     scope :alphabetical_order,  ->  {order(state: :asc)}
-
+    scope :doctor_state, -> {select(:state).distinct}
 end
 

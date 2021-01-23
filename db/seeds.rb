@@ -8,7 +8,7 @@
 
 
 
-150. times do
+450. times do
 Doctor.create(name: Faker::Name.name, 
               address: Faker::Address.unique.street_address, 
               city: Faker::Address.unique.city, 
