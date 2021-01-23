@@ -1,5 +1,5 @@
 <%=form_tag('/doctors', method: 'get') do %>
-<%=label_tag(:q, "Search By State:") %>
+<%=label_tag(:q, "Search By Specialty:") %>
 <%=text_field_tag(:q)%>
 <%= submit_tag("Search", class: 'btn btn-dark')%>
 <% end %>

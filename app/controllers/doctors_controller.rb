@@ -3,7 +3,7 @@ class DoctorsController < ApplicationController
 
     def index  #all
         if params[:q]
-             @doctors = Doctor.search_by_state(params[:q])
+             @doctors = Doctor.search_by_specialty(params[:q])
         else 
             @doctors = Doctor.all.alphabetical_order
         end

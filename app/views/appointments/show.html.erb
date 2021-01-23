@@ -1,8 +1,8 @@
 <h1> Appointment Details: </h1> 
 
 <strong>Patient Name:</strong><%=current_user.first_name%> <br>
-<strong>Date: </strong><%= @appointment.date.strftime("%B %e, %Y")%><br>
-<strong>Time: </strong><%= @appointment.time.strftime("%I:%M %p")%> <br>
+<strong>Date: </strong><%= @appointment.date&.strftime("%B %e, %Y")%><br>
+<strong>Time: </strong><%= @appointment.time&.strftime("%I:%M %p")%> <br>
 <strong>Doctor:</strong><%=@appointment.doctor.name%> (<%=@appointment.doctor.specialty%>)<br>
 <strong>Address:</strong> <%=@appointment.doctor.address%><br>
 

@@ -4,8 +4,8 @@
 <br>
 <h3> <%= upcoming? %><h3> <br>
 
-<% current_user.appointments.upcoming.each do |a| %>
-<%= link_to "#{a.date.strftime("%B %e, %Y")}", appointment_path(a)%><br>
+<% @user.appointments.upcoming.each do |a| %>
+<%= link_to "#{a.date&.strftime("%B %e, %Y")}", appointment_path(a)%><br>
 <%end%>
 
 

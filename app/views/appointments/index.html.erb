@@ -1,5 +1,5 @@
 <h1> Appointment History</h1>
 
 <% @appointments.each do |appointment| %> 
-<%= link_to "#{appointment.date.strftime("%B %e, %Y")}", appointment_path(appointment)%><br>
+<%= link_to "#{appointment.date&.strftime("%B %e, %Y")}", appointment_path(appointment)%><br>
 <%end%>
