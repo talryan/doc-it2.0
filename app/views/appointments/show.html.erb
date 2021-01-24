@@ -8,7 +8,10 @@
 
 <%=@appointment.doctor.city%>, <%=@appointment.doctor.state%> <%=@appointment.doctor.zipcode%> <br>
 <br>
+
+<%if authorized_appointment %>
 <%= link_to "Edit or Reschedule Appointment", edit_appointment_path %>
 <br>
+<%= link_to "Appointment History", appointment_path %>
 <%= button_to "Cancel Appointment", appointment_path(@appointment), method: "delete"%>
-
+<%end%>
