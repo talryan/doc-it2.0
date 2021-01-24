@@ -1,7 +1,7 @@
 class DoctorsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
-    def index  #all
+    def index
         if params[:q]
              @doctors = Doctor.search_by_specialty(params[:q])
         else 
@@ -9,7 +9,7 @@ class DoctorsController < ApplicationController
         end
     end 
 
-    def show #one 
+    def show 
         @doctor = Doctor.find(params[:id])
     end
 
