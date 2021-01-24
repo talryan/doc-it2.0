@@ -1,17 +1,27 @@
+<div style="width: 75%" class="center">
 
 <h1> Sign Up </h1>
 
 <%= form_for :user do |f|%>
-    <%= f.label "First Name:"%> <br>
-    <%= f.text_field :first_name %> <br>
-    <%= f.label "Last Name:" %><br>
-    <%= f.text_field :last_name %><br>
-    <%= f.label "Email:" %><br>
-    <%= f.email_field :email %><br>
-    <%= f.label "Password:" %><br>
-    <%= f.password_field :password %><br>
-    <%= f.submit "Sign Up" %>
+    <div class="form-group">
+    <%= f.label  "First Name", class:"col-sm-2 col-form-label" %> <br>
+    <%= f.text_field :first_name, class:"form-control"%> <br>
+    </div>
+    <div class="form-group">
+    <%= f.label :last_name, class:"col-sm-2 col-form-label" %><br>
+    <%= f.text_field :last_name, class:"form-control"%><br>
+    </div>
+     <div class="form-group">
+    <%= f.label "Email:", class:"col-sm-2 col-form-label" %><br>
+    <%= f.email_field :email, class:"form-control" %><br>
+    </div>
+      <div class="form-group">
+    <%= f.label "Password:", class:"col-sm-2 col-form-label" %><br>
+    <%= f.password_field :password, class:"form-control"  %><br>
+    </div>
+    <%= f.submit "Sign Up", class:"btn btn-dark"%>
     <% end %>
+    </div>
 
 
 
