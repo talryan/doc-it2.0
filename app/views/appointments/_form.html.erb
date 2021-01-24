@@ -1,10 +1,10 @@
-
+<%= render partial: "layouts/errors", locals: {object: @appointment}  %>
 
 <%= form_for @appointment do |f| %>
     <%= f.label "Date:" %>
     <%= f.date_field :date, min: Date.today%><br>
     <%= f.label "Time:" %>
-    <%= f.time_field :time %><br>
+    <%= f.time_field :time%><br>
     <%= f.hidden_field :doctor_id %>
  
     <%= f.submit %>
