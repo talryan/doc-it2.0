@@ -1,17 +1,21 @@
-<h2> Login <h2>
 
 
 <h3>Log In:</h3>
+
+
+
 <%= form_for :user do |f|%>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %><br>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
-    <%= f.submit "Log In"%><br>
+    <%= f.label :email, required:true, class: "form-control-label", for:"inputValid" %><br>
+    <%= f.email_field :email, class: "form-control is-valid", id: "inputValid" %><br>
+    <%= f.label :password, required:true, class: "form-control-label", for:"inputValid" %><br>
+    <%= f.password_field :password, required:true, class: "form-control is-valid", id: "inputValid" %><br><br>
+    <div class="valid-feedback">Success! You've done it.</div>
+    <%= f.submit "Submit"%>
 <% end %>
 
 
-<h2>Or Log In With Google</h2>
-<%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+
+<h3>Log In With Google</h3>
+<%= button_to "Submit", '/auth/google_oauth2'  %>
 
 <!-- OmniAuth 
