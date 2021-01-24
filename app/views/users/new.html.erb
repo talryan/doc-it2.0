@@ -2,33 +2,32 @@
 
 
   <br><br>
-<div class="container-sm ">
+    <div class="container-sm ">
     <div class="jumbotron">
-    <h1> Sign Up </h1>
+        <h1 class="display-4">SIGN UP </h1>
     </div>
     </div>
-   <div style="width: 50%" class="center">
-<%= form_for :user do |f|%>
+    <div style="width: 50%" class="center">
+        <%= form_for :user do |f|%>
     <div class="form-group">
-    <%= f.label  "first", class:"col-sm-2 col-form-label" %> <br>
-    <%= f.text_field :first_name, class:"form-control"%> <br>
+        <%= f.label  "first", class:"col-sm-2 col-form-label" %> <br>
+        <%= f.text_field :first_name, class:"form-control"%> <br>
     </div>
     <div class="form-group">
-    <%= f.label "last", class:"col-sm-2 col-form-label" %><br>
-    <%= f.text_field :last_name, class:"form-control"%><br>
+        <%= f.label "last", class:"col-sm-2 col-form-label" %><br>
+        <%= f.text_field :last_name, class:"form-control"%><br>
     </div>
-     <div class="form-group">
-    <%= f.label "Email:", class:"col-sm-2 col-form-label" %><br>
-    <%= f.email_field :email, class:"form-control" %><br>
+    <div class="form-group">
+        <%= f.label "Email:", class:"col-sm-2 col-form-label" %><br>
+        <%= f.email_field :email, class:"form-control" %><br>
     </div>
-      <div class="form-group">
-    <%= f.label "Password:", class:"col-sm-2 col-form-label" %><br>
-    <%= f.password_field :password, class:"form-control"  %><br>
+    <div class="form-group">
+        <%= f.label "Password:", class:"col-sm-2 col-form-label" %><br>
+        <%= f.password_field :password, class:"form-control"  %><br>
     </div>
-    <%= f.submit "Sign Up", class:"btn btn-dark"%>
-    <% end %>
-    </div>
-    </center>
+        <%= f.submit "Sign Up", class:"btn btn-dark"%>
+        <% end %>
+</center>
 
 
 
