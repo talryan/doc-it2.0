@@ -1,6 +1,8 @@
 
-
-<h1> Welcome, <%= current_user.first_name.titlecase %> </h1> 
+<center>
+ <div class="container-sm ">
+ <div class="jumbotron">
+    <h1> Welcome, <%= current_user.first_name.titlecase %> </h1> 
 <br>
 <h3> <%= upcoming? %><h3> <br>
 
@@ -12,12 +14,7 @@
 
 
 <%=link_to "Find a Doctor Near You ", doctors_path %>
+</div>
+</center>
 
-<!-- User Portal
-
-
-<%=link_to "View Appointments", appointments_path %>
-<!-- You have (amount of appointments) upcoming appointments 
-<!-- Link to new Appointment 
-<!-- Link to edit Appointment Appointment 
 

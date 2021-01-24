@@ -557,6 +557,7 @@ pre code {
 .container-lg,
 .container-xl {
   width: 100%;
+  background: white;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -5293,7 +5294,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #f8f5f0;
+  background-color: #b0e0e6;
   border-radius: 0.3rem;
 }
 
