@@ -6,10 +6,10 @@ module AppointmentsHelper
     end
 
     def appointment_history?
-        if @appointment == nil 
+        if current_user.appointments == nil 
         "You have no appointment history."
         else 
-            "You have #{@appointment.count} past appointment(s). "
+            "You have #{current_user.appointments.count} past appointment(s). "
         end
     end
 end
