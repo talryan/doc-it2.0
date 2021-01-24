@@ -8,24 +8,18 @@
                 <%= submit_tag "Search", class: "btn btn-dark my-2 my-sm-0" %>
                 <%end%>
         </div>
-        
-
-
                 <% if is_admin? %>
                 <%= link_to "Create a New Doctor", new_doctor_path%>
                 <% end %>
-
-
-
  <br>
                 <% @doctors.each do |doctor| %>
-      <ul style="list-style-type:none;">
-        <h3> <%= doctor.state%> </h3>
-        <h4><%= link_to "#{doctor.name}", doctor_path(doctor)%></h4>
-        <li><label> (<%= doctor.specialty%>)</label>
-       </ul>
+        <ul style="list-style-type:none;">
+                <h3> <%= doctor.state%> </h3>
+                <h4><%= link_to "#{doctor.name}", doctor_path(doctor)%></h4>
+                <li><label> (<%= doctor.specialty%>)</label>
+        </ul>
  <br> 
-        <%end%>
+                 <%end%>
         </div>
 </center>
 

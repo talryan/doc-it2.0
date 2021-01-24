@@ -1,11 +1,17 @@
+<center>
+    <div class="container-sm ">
+    <div class="jumbotron">
+            <h1>  Dr. <%=@doctor.name%> </h1>
+            <h3> Specialty: <%=@doctor.specialty%></h3>
+            <br>
+            <h3> Address:</h3>
+            <h3> <%=@doctor.address%></h3>
+            <h4> <%=@doctor.city%>, <%=@doctor.state%></h4>
+            <h4> <%=@doctor.zipcode%></h4>
 
-<h2>  Dr. <%=@doctor.name%> <h2>
-<h3> Specialty: <%=@doctor.specialty%>
-<h3> Address: <%=@doctor.address%></h3>
-<h3> City: <%=@doctor.city%></h3>
-<h3> State: <%=@doctor.state%></h3>
-<h3> Zipcode: <%=@doctor.zipcode%></h3>
 
-
-<%= link_to "Create New Appointment", new_doctor_appointment_path(@doctor) %> <br>
-<%= link_to "Select Another Doctor", doctors_path %>
+        <h4> <%= link_to "Create New Appointment", new_doctor_appointment_path(@doctor) %>  </h4><br>
+        <h4> <%= link_to "Select Another Doctor", doctors_path %> </h4>
+    </div>
+    </div>
+</center>
