@@ -13,6 +13,9 @@ class DoctorsController < ApplicationController
         @doctor = Doctor.find(params[:id])
     end
 
+    def new 
+    end
+
 
     private
 

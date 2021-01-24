@@ -1,10 +1,15 @@
+<div class="form-inline">
 <%=form_tag('/doctors', method: 'get') do %>
-<%=label_tag(:q, "Search By Specialty:") %>
+<%=label_tag(:q, "Search By Specialty:") %><br>
 <%=text_field_tag(:q)%>
-<%= submit_tag("Search", class: 'btn btn-dark')%>
+   <%= submit_tag "Search", class: "btn btn-dark my-2 my-sm-0" %>
+   <%end%>
+        </div>
+
+
+<% if is_admin? %>
+<%= link_to "Create a New Doctor", new_doctor_path%>
 <% end %>
-
-
 
 
 

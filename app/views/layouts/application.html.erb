@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Doc'It</title>
+    <title>Doc on Dec</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,6 +15,7 @@
       <a class="navbar-brand" href="<%= doctors_path %>"/>View Doctors</a>
       <a class="navbar-brand" <%= link_to "Log Out", logout_path, method: 'delete' %></a>
        <% else%>
+       <a class="navbar-brand" href="<%= root_path%>"/>Home</a>
       <a class="navbar-brand" href="<%= '/login' %>"/>Sign In</a>
       <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
         <%end%>
@@ -22,12 +23,12 @@
   </head>
 
   <body>
+<br> <br> <br> <br>
+
     <%= yield %>
      <footer class="branding">
-        <small>&copy; 2020 <strong>Doc'it 2.0</strong></small>
+        <small>&copy; 2021 <strong>DocOnDec</strong></small>
       </footer><br>
-       <% if logged_in? %>
-          <a href="/logout">Log Out</a>
-          <%end%>
+     
   </body>
 </html>
