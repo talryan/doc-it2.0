@@ -1,18 +1,23 @@
+<center>
+    <div class="container-sm ">
+    <div class="jumbotron">
+        <h1> Appointment Details: </h1> 
 
-<h1> Appointment Details: </h1> 
+        <h3>Patient Name:</h3><h4><%=current_user.first_name%> </h4><br>
+        <h3>Date: </h3><h4><%= @appointment.date&.strftime("%B %e, %Y")%></h4><br>
+        <h3>Time: </h3><h4><%= @appointment.time&.strftime("%I:%M %p")%> </h4><br>
+        <h3>Doctor:</h3><h4><%=@appointment.doctor.name%> (<%=@appointment.doctor.specialty%>)</h4><br>
+        <h3>Address: </h3><h4><%=@appointment.doctor.address%></h4><br>
 
-<strong>Patient Name:</strong><%=current_user.first_name%> <br>
-<strong>Date: </strong><%= @appointment.date&.strftime("%B %e, %Y")%><br>
-<strong>Time: </strong><%= @appointment.time&.strftime("%I:%M %p")%> <br>
-<strong>Doctor:</strong><%=@appointment.doctor.name%> (<%=@appointment.doctor.specialty%>)<br>
-<strong>Address:</strong> <%=@appointment.doctor.address%><br>
+        <%=@appointment.doctor.city%>, <%=@appointment.doctor.state%> <%=@appointment.doctor.zipcode%> <br>
+        <br>
 
-<%=@appointment.doctor.city%>, <%=@appointment.doctor.state%> <%=@appointment.doctor.zipcode%> <br>
-<br>
+        <%if authorized_appointment %>
+        <%= link_to "Edit or Reschedule Appointment", edit_appointment_path %>
+        <br>
+        <%= link_to "Appointment History", appointment_path %>
+        <%= button_to "Cancel Appointment", appointment_path(@appointment), method: "delete", class: "btn btn-dark my-2 my-sm-0"%>
+        <%end%>
+    </div>
+</center>
 
-<%if authorized_appointment %>
-<%= link_to "Edit or Reschedule Appointment", edit_appointment_path %>
-<br>
-<%= link_to "Appointment History", appointment_path %>
-<%= button_to "Cancel Appointment", appointment_path(@appointment), method: "delete"%>
-<%end%>
