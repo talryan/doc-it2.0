@@ -1,1 +1,17 @@
-<h1> Create a New Doctor <h1>
+<h2> Create a New Doctor <h2>
+
+<%= form_for @doctor do |f| %>
+    <%= f.label "Name:" %>
+    <%= f.text_field :name%><br>
+    <%= f.label "Specialty:" %>
+    <%= f.text_field :specialty%><br>
+    <%= f.label "Address:" %>
+    <%= f.text_field :address%><br>
+    <%= f.label "City:" %>
+    <%= f.text_field :city%><br>
+    <%= f.label "State:" %>
+    <%= f.text_field :state%><br>
+    <%= f.label "Zipcode:" %>
+    <%= f.text_field :zipcode%><br>
+    <%= f.submit %>
+<% end %>

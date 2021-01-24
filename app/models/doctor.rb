@@ -9,7 +9,7 @@ class Doctor < ApplicationRecord
  
     # accepts_nested_attributes_for :appointments
 
-    scope :search_by_specialty, -> (query) {where('specialty LIKE ?', "%#{query}%" )}
+    scope :search_by_state, -> (query) {where('state LIKE ?', "%#{query}%" )}
     scope :alphabetical_order,  ->  {order(state: :asc)}
     scope :doctor_state, -> {select(:state).distinct}
 end

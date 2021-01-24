@@ -1,6 +1,7 @@
 <div class="form-inline">
 <%=form_tag('/doctors', method: 'get') do %>
-<%=label_tag(:q, "Search By Specialty:") %><br>
+ 
+<%=label_tag(:q, "Search By State:") %><br>
 <%=text_field_tag(:q)%>
    <%= submit_tag "Search", class: "btn btn-dark my-2 my-sm-0" %>
    <%end%>
