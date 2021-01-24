@@ -1,21 +1,31 @@
 
+<div class="container-sm ">
+    <div class="jumbotron">
+<h2 class="display-4"> LOG IN: </h2>
 
-<h3>Log In:</h3>
-
-
+</div>
+<div style="width: 50%" class="center">
 
 <%= form_for :user do |f|%>
-    <%= f.label :email, required:true, class: "form-control-label", for:"inputValid" %><br>
-    <%= f.email_field :email, class: "form-control is-valid", id: "inputValid" %><br>
-    <%= f.label :password, required:true, class: "form-control-label", for:"inputValid" %><br>
-    <%= f.password_field :password, required:true, class: "form-control is-valid", id: "inputValid" %><br><br>
-    <div class="valid-feedback">Success! You've done it.</div>
-    <%= f.submit "Submit"%>
+  <div class="form-group">
+    <%= f.label :email, required:true , class:"col-sm-3 col-form-label"%><br>
+    <%= f.email_field :email, class:"form-control"%><br>
+    </div>
+    <div class="form-group">
+    <%= f.label :password, required:true, class:"col-sm-3 col-form-label"%><br>
+    <%= f.password_field :password, required:true, class:"form-control"%><br><br>
+    </div>
+          <div class="form-group">
+    <%= f.submit "Submit", class:"btn btn-dark"%>
+    </div>
 <% end %>
 
+<br>
 
 
-<h3>Log In With Google</h3>
-<%= button_to "Submit", '/auth/google_oauth2'  %>
-
-<!-- OmniAuth 
+<div class="container-sm ">
+    <div class="jumbotron">
+<h3 class="display-4"> LOG IN WITH GOOGLE:</h3>
+</div>
+<%= button_to "Login", '/auth/google_oauth2', class: "btn btn-dark"  %>
+</div>

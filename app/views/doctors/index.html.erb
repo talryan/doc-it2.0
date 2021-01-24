@@ -1,7 +1,7 @@
 <div class="form-inline">
 <%=form_tag('/doctors', method: 'get') do %>
- 
-<%=label_tag(:q, "Search By State:") %><br>
+ <br>
+<%=label_tag(:q, "Search By State:") %>
 <%=text_field_tag(:q)%>
    <%= submit_tag "Search", class: "btn btn-dark my-2 my-sm-0" %>
    <%end%>
@@ -11,13 +11,14 @@
 <% if is_admin? %>
 <%= link_to "Create a New Doctor", new_doctor_path%>
 <% end %>
-<ul style="list-style-type:none;">
+
 
 
 
 <% @doctors.each do |doctor| %>
-<h4> <%= doctor.state%> </h4>
-<%= link_to "#{doctor.name}", doctor_path(doctor)%>
+<ul style="list-style-type:none;">
+<h3> <%= doctor.state%> </h3>
+<h4><%= link_to "#{doctor.name}", doctor_path(doctor)%></h4>
 <li><label> (<%= doctor.specialty%>)</label>
 </ul>
 <br> 
