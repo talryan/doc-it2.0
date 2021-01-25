@@ -1,3 +1,15 @@
+# DOC ON DEC 
+Welcome to your Dr's appointment app creator. 
+
+# TO GET STARTED: 
+Run bundle install to get all of the necessary gems. Have fun!
+
+
+
+# STATUS: 
+Completed for now, barring some minor tweaks here and there. 
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
