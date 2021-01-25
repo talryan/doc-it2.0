@@ -5,6 +5,7 @@
         <h1 class="display-4"> Create New Appointment </h1> 
         <h3>Patient Name: <%=current_user.first_name%> <%=current_user.last_name%></h3> 
         <h3>Doctor Name: <%=@appointment.doctor.name%> </h3> 
+         <h4> <%= link_to "Select Another Doctor", doctors_path %> </h4>
         <%= render "form"%>
 </center>
  
