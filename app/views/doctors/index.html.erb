@@ -6,7 +6,7 @@
                 <%=label_tag(:q, "Search By State:") %>
                 <%=text_field_tag(:q)%>
                   <%=label_tag(:specialty, "Filter By Specialty:") %>
-                <%= select_tag :specialty, options_for_select(@specialties)%>
+                <%= select_tag :specialty, options_for_select(@specialties), include_blank: true%>
                 <%= submit_tag "Search", class: "btn btn-dark my-2 my-sm-0" %>
                 <%end%> 
         </div>
