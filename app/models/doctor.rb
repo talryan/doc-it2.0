@@ -9,7 +9,7 @@ class Doctor < ApplicationRecord
     validates :zipcode, presence: true
  
   
-    scope :search_by_state_and_specialty, -> (query, specialty) {where('state LIKE ? AND specialty LIKE ?', "%#{query}%", "%#{specialty}%" )}
+    scope :search_by_state_and_specialty, -> (query, specialty) {where('state LIKE ? AND specialty LIKE ?', "%#{query}%", "%#{specialty}%")}
     scope :list_of_specialties, -> {select(:specialty).distinct}
     scope :alphabetical_order,  ->  {order(state: :asc)}
     scope :doctor_state, -> {select(:state).distinct}
