@@ -5,8 +5,9 @@
  <br>
                 <%=label_tag(:q, "Search By State:") %>
                 <%=text_field_tag(:q)%>
+                <%= select_tag :specialty, options_for_select(@specialties)%>
                 <%= submit_tag "Search", class: "btn btn-dark my-2 my-sm-0" %>
-                <%end%>
+                <%end%> 
         </div>
                 <% if is_admin? %>
                 <%= link_to "Create a New Doctor", new_doctor_path%>

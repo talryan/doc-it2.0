@@ -3,10 +3,11 @@ class DoctorsController < ApplicationController
 
     def index
         if params[:q]
-             @doctors = Doctor.search_by_state(params[:q])
+             @doctors = Doctor.search_by_state_and_specialty(params[:q],params[:specialty])
         else 
             @doctors = Doctor.all.alphabetical_order
         end
+            @specialties = Doctor.list_of_specialties.collect{|s|s.specialty}
     end 
 
     def show 
@@ -30,6 +31,6 @@ end
     private
 
     def doctors_params
-        params.require(:doctor).permit(:name, :specialty, :address, :zipcode, :city, :state, appointment_attributes: [:time, :date,:user_id, :doctor_id])
+        params.require(:doctor).permit(:name, :specialty_id, :address,  :zipcode, :city, :state, appointment_attributes: [:time, :date,:user_id, :doctor_id])
     end
 end

@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   resources :users
  
-  resources :specialties do
+  
   resources :doctors do 
-  resources :appointments, shallow: true #[:new, :index, :create, :show, :destroy]
-  end
+  resources :appointments #[:new, :index, :create, :show, :destroy]
+  
 end
   resources :appointments
 
