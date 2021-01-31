@@ -1,6 +1,7 @@
 class Doctor < ApplicationRecord
     has_many :appointments
     has_many :users, through: :appointments
+    belongs_to :specialty
     validates :name, presence: true
     validates :address, presence: true 
     validates :city, presence: true

@@ -17,29 +17,51 @@ Doctor.create(name: Faker::Name.name,
             )
 end
 
-specialty = [
-"General Practice", 
-"Pediatrics",
- "Radiology", 
- "Ophthalmology", 
- "Kinesiology", 
- "Oncology",
- "Dermatology", 
- "Gastroenterology", 
- "Epidemiology",
- "Allergy and immunology", 
- "Anesthesiology", 
- "Diagnostic radiology",
- "Neurology",
- "Nuclear Medicine",
- "Family Medicine",
- "Obstetrics and Gynecology",
- "Pathology",
- "Preventive Medicine",
- "Psychiatry",
- "Urology"
-]
-Doctor.all.each do |doctor|
-  doctor.update(specialty: specialty.sample)
-end
+specialty = Specialty.create([
+{name: "General Practice"},
+{name: "Pediatrics"}, 
+{name: "Radiology"}, 
+{name: "Ophthalmology"},
+{name: "Kinesiology"},
+{name: "Oncology"},
+{name: "Dermatology"}, 
+{name: "Gastroenterology"}, 
+{name: "Epidemiology"},
+{name: "Allergy and immunology"}, 
+{name: "Anesthesiology"}, 
+{name: "Diagnostic radiology"},
+{name: "Neurology"},
+{name: "Nuclear Medicine"}, 
+{name: "Family Medicine"}, 
+{name: "Obstetrics and Gynecology"}, 
+{name: "Pathology"}, 
+{name: "Preventive Medicine"}, 
+{name: "Psychiatry"}, 
+{name: "Urology"} 
+])
+# specialty = [
+# "General Practice", 
+# "Pediatrics",
+#  "Radiology", 
+#  "Ophthalmology", 
+#  "Kinesiology", 
+#  "Oncology",
+#  "Dermatology", 
+#  "Gastroenterology", 
+#  "Epidemiology",
+#  "Allergy and immunology", 
+#  "Anesthesiology", 
+#  "Diagnostic radiology",
+#  "Neurology",
+#  "Nuclear Medicine",
+#  "Family Medicine",
+#  "Obstetrics and Gynecology",
+#  "Pathology",
+#  "Preventive Medicine",
+#  "Psychiatry",
+#  "Urology"
+# ]
+# Doctor.all.each do |doctor|
+#   doctor.update(specialty: specialty.sample)
+# end
 
