@@ -5,11 +5,7 @@ class AppointmentsController < ApplicationController
 
 
     def index
-        if params[:doctor_id] && @doctor = Doctor.find(params[:doctor_id])
-            @appointments = @doctor.appointments
-        else 
             @appointments = Appointment.all
-        end
     end
 
 

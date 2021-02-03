@@ -1,6 +1,7 @@
 <center>
         <div class="container-sm ">
         <div class="jumbotron">
+                <h2> Doctors: </h2>
                 <%=form_tag('/doctors', method: 'get') do %>
  <br>
                 <%=label_tag(:q, "Search By State:") %>
@@ -11,8 +12,9 @@
                 <%end%> 
         </div>
                 <% if is_admin? %>
-                <%= link_to "Create a New Doctor", new_doctor_path%>
+                <h4> <%= link_to "Create a New Doctor", new_doctor_path%> </h4>
                 <% end %>
+
  <br>
                 <% @doctors.each do |doctor| %>
         <ul style="list-style-type:none;">

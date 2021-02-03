@@ -19,13 +19,15 @@ class DoctorsController < ApplicationController
     end
 
     def create
-    @doctor = Doctor.new(doctors_params)
-    if @doctor.save 
-        redirect_to doctor_path(@doctor)
-    else
-        render :new
+        @doctor = Doctor.new(doctors_params)
+        if @doctor.save 
+            redirect_to doctor_path(@doctor)
+        else
+            render :new
+        end
     end
-end
+
+
 
 
     private
