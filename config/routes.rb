@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   
   resources :doctors do 
   resources :appointments #[:new, :index, :create, :show, :destroy]
-  
 end
   resources :appointments
 

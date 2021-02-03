@@ -1,5 +1,8 @@
 class AppointmentsController < ApplicationController
     before_action :redirect_if_not_logged_in
+    before_action :find_appointment, only: [:edit, :update, :show, :destroy]
+    before_action :authorized_appointment, only: [:edit, :update, :destroy]
+
 
     def index
         if params[:doctor_id] && @doctor = Doctor.find(params[:doctor_id])
@@ -8,7 +11,6 @@ class AppointmentsController < ApplicationController
             @appointments = Appointment.all
         end
     end
-
 
 
     def new
@@ -24,7 +26,6 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.new(appointment_params)
         @appointment.user_id = current_user.id
         if @appointment.save
-          
             redirect_to appointment_path(@appointment)
         else
             render :new
@@ -33,11 +34,9 @@ class AppointmentsController < ApplicationController
     end
 
     def edit 
-        @appointment = Appointment.find(params[:id])
     end
 
     def update
-            @appointment = Appointment.find(params[:id])
             @appointment.update(appointment_params)
             if @appointment.valid?
                 redirect_to appointment_path
@@ -46,12 +45,10 @@ class AppointmentsController < ApplicationController
             end
     end
 
-    def show #one 
-        @appointment = Appointment.find(params[:id])
+    def show
     end
 
     def destroy
-        @appointment = Appointment.find(params[:id])
         @appointment.destroy
         redirect_to appointments_path
     end
@@ -60,5 +57,15 @@ class AppointmentsController < ApplicationController
 
     def appointment_params
         params.require(:appointment).permit(:time, :date, :user_id, :doctor_id)
+    end
+
+    def find_appointment
+        @appointment = Appointment.find(params[:id])
+    end
+
+    def authorized_appointment
+       if  @appointment.user_id != current_user.id
+        redirect_to appointments_path, alert: "You do not have access to this page."
+       end
     end
 end
